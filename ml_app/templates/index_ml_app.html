@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Machine learning app{% endblock %}
+
+{% block content %}
+<div class = "container">
+
+    <div class = "row mt-4">
+        <div class="col-md-8 offset-md-2">
+            <center>
+                <h1>BIENVENUE DANS NOTRE APPLICATION DE PRÉDICTION D'UNE CRISE CARDIAQUE !</h1>
+                <p style = "font-weight: bold"> Voulez-vous prédire une crise cardiaque ?</p>
+                <p style = "font-weight: bold"> Si oui, nous vous invitons à complèter le formulaire ci-dessous:</p>
+            </center>
+            <div class="card shadow" style = "background-color: purple">
+
+
+                <div class="card body font-weight-bold mx-auto navbar-brand">
+
+                    <form class="card body" method = "POST">
+                        {% csrf_token %}
+                        {{form}}
+                        <br>
+                        <input class = "btn btn-info" type = "submit" value = "Faire une prédiction">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

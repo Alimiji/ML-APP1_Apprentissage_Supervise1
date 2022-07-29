@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block title %}Prédictions{% endblock %}
+
+{% block content %}
+
+
+
+<div class = "container">
+
+    <div class = "row mt-4">
+        <div class="col-md-8 offset-md-2" style="position: absolute; top: 150px; left: -150px">
+
+            <table class="table table-striped table-dark" >
+                {% for data in resultats_CCardiaque_predis %}
+                <thead>
+                    <tr>
+                        <th rowspan="4">ID</th>
+                        <th scope="col">BMI</th>
+                        <th scope="col">Smoking</th>
+                        <th scope="col">AlcoholDrinking"</th>
+                        <th scope="col">Stroke</th>
+                        <th scope="col">PhysicalHealth</th>
+                        <th scope="col">MentalHealth</th>
+                        <th scope="col">DiffWalking"</th>
+                        <th scope="col">Sex</th>
+                        <th scope="col">AgeCategory</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+
+
+
+
+                        <tr>
+                            <th scope="row" rowspan="0">1</th>
+                            <td>{{ data.BMI }}</td>
+                            <td>{{ data.Smoking }}</td>
+                            <td>{{ data.AlcoholDrinking }}</td>
+                            <td>{{ data.Stroke }}</td>
+                            <td>{{ data.PhysicalHealth }}</td>
+                            <td>{{ data.MentalHealth }}</td>
+                            <td>{{ data.DiffWalking }}</td>
+                            <td>{{ data.Sex }}</td>
+                            <td>{{ data.AgeCategory }}</td>
+                        </tr>
+
+
+                        <tr>
+
+                            <th scope="col">Race</th>
+                            <th scope="col">Diabetic"</th>
+                            <th scope="col">PhysicalActivity</th>
+                            <th scope="col">GenHealth</th>
+                            <th scope="col">SleepTime</th>
+                            <th scope="col">Asthma</th>
+                            <th scope="col">KidneyDisease</th>
+                            <th scope="col">SkinCancer</th>
+                            <th scope="col">Predictions</th>
+                        </tr>
+
+                        <tr>
+                            <td>{{ data.AgeCategory }}</td>
+                            <td>{{ data.Race }}</td>
+                            <td>{{ data.Diabetic }}</td>
+                            <td>{{ data.PhysicalActivity }}</td>
+                            <td>{{ data.GenHealth }}</td>
+                            <td>{{ data.SleepTime }}</td>
+                            <td>{{ data.Asthma }}</td>
+                            <td>{{ data.KidneyDisease }}</td>
+                            <td>{{ data.SkinCancer }}</td>
+                            <td>{{ data.Predictions }}</td>
+
+                        </tr>
+
+
+                </tbody>
+                {% endfor %}
+            </table>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
